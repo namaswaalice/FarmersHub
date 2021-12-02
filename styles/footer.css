@@ -14,10 +14,13 @@ nav{
   width: 100%;
   padding: 20px;
   transition: all 0.4s ease;
+  background: #074c00;
+  color: #ffffff;
+  z-index: 1000;
 }
 nav.sticky{
   padding: 15px 20px;
-  background: #4070f4;
+  background: #074c00;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 nav .nav-content{
@@ -31,7 +34,7 @@ nav .nav-content{
 nav .logo a{
   font-weight: 500;
   font-size: 35px;
-  color: #4070f4;
+  color: #ffffff;
 }
 nav.sticky .logo a{
   color: #fff;
@@ -45,7 +48,7 @@ nav.sticky .logo a{
 }
  .nav-links li a{
   text-decoration: none;
-  color: #0E2431;
+  color: #ffffff;
   font-size: 18px;
   font-weight: 500;
   padding: 10px 4px;
@@ -59,7 +62,7 @@ nav.sticky .logo a{
    transition: all 0.4s ease;
 }
  nav.sticky .nav-links li a:hover{
-  color: #0E2431;
+  color: #4070f4;
 }
 .home{
   height: 100vh;
@@ -69,6 +72,9 @@ nav.sticky .logo a{
   background-position: center;
   background-attachment: fixed;
   font-family: 'Ubuntu', sans-serif;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }
 h2{
   font-size: 30px;
@@ -96,9 +102,10 @@ footer{
 
 
 .footer-distributed{
-  background-color: #2c292f;
+  background-color: #074c00;
   box-sizing: border-box;
   width: 100%;
+  bottom: 0;
   text-align: left;
   font: bold 16px sans-serif;
   padding: 50px 50px 60px 50px;
@@ -262,4 +269,23 @@ footer{
     margin-left: 0;
   }
 
+}
+.myinput{
+  padding: 8px 12px;
+  width: 300px;
+  outline: none;
+  border-bottom: 1px solid grey;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+.myinputcmb{
+  padding: 8px 12px;
+  width: 300px;
+  outline: none;
+  border-bottom: 1px solid grey;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background: #00000000;
 }
