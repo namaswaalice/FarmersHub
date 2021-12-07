@@ -57,6 +57,9 @@ nav.sticky .logo a{
  .nav-links li a:hover{
    color: #4070f4;
  }
+ .nav-links .active{
+  color: #4070f4;
+ }
  nav.sticky .nav-links li a{
    color: #fff;
    transition: all 0.4s ease;
@@ -288,4 +291,8 @@ footer{
   border-left: none;
   border-right: none;
   background: #00000000;
+}
+
+.colorgreen{
+  color: #074c00;
 }
