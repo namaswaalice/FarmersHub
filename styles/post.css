@@ -10,6 +10,7 @@
   border-radius: 8px;
   outline: none;
   border: none;
+  cursor: pointer;
 }
 textarea{
   width: 100%;
@@ -24,4 +25,14 @@ textarea{
   font-size: 20px;
   border-radius: 10px;
 
+}
+.sub-nav-active{
+  background: #074c00;
+  color: #fff;
+}
+#pasteform{
+  display: none;
+}
+#diseaseform{
+  display: none;
 }

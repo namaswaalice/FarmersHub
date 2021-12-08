@@ -1,0 +1,35 @@
+.my-connections{
+	width: 100%;
+	background: mediumseagreen;
+	padding: 8px;
+	margin-top: 16px;
+	border-top: 8px solid #074c00;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+.chart-holder{
+	margin-top: 8px;
+	display: flex;
+	border-bottom: 2px solid #fff;
+}
+.message-sender{
+width: 30%;
+}
+.message-content{
+	width: 50%;
+}
+.message-details{
+	width: 20%;
+}
+.message-status{
+	width: 10%;
+}
+.profile-image{
+	display: flex;
+	width: 80px;
+	height: 80px;
+	background: #fff;
+	border-radius: 40px;
+	justify-content: center;
+	align-items: center;
+}

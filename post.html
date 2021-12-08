@@ -39,9 +39,9 @@
  		<table>
  			<thead>
  				<tr>
-        <th>My post </th>
-          <th>Paste </th>
-          <th>Diseases </th>
+        <th id="callpost">My post </th>
+          <th id="callpaste">Paste </th>
+          <th id="calldisease">Diseases </th>
  					
  				</tr>
  			</thead>
@@ -52,12 +52,48 @@
 
  	</div>
  </div>
- <!-- post -->
- <div class="profile-holder">
+ <!-- content here  -->
+ <div id="postform">
+ <div class="profile-holder" >
   <div class="avator-holder">
     <center>
     <img src="assests/imageholder.png" width="225px"><br><br>
-    	<div class="button">
+ 			<div class="button">
+    		<i class="fa fa-map-marker"></i>
+    		<h3 class="uploadbutton">Location</h3>
+    
+    	</div>
+    </center>
+  </div>
+  <div class="details-holder">
+    <center>
+      <h3 class="colorgreen">Post title</h3><br>
+      <label><p>Date noticed in farm</p></label><br>
+    
+    <label><p>Destraction to farm</p></label><br>
+   <label><p>Spreading to next farms</p></label><br>
+   
+    <div>
+      <p>Crops affecting</p>
+      <br>
+   <label><p>Note/comment</p></label><br>
+   
+    </div>
+    
+   
+  </div>
+
+</div>
+</div>
+
+
+ <!-- post paste-->
+ <div id="pasteform">
+ <div class="profile-holder" >
+  <div class="avator-holder">
+    <center>
+    <img src="assests/imageholder.png" width="225px"><br><br>
+    	<div class="button" id="uploadpaste">
     		<img src="assests/uploadimage.png">
     		<b class="uploadbutton">Upload image</b>
     
@@ -98,11 +134,68 @@
    
     </div>
      <textarea placeholder="please leave a note"></textarea><br><br>
-     <button class="submitpostbutton"><b>POST NOW</b></button>
+     <button class="submitpostbutton"><b>POST Paste</b></button>
   </div>
 
 </div>
+</div>
 <!-- end of post -->
+
+ <!-- post disease -->
+ <div id="diseaseform">
+ <div class="profile-holder">
+  <div class="avator-holder">
+    <center>
+    <img src="assests/imageholder.png" width="225px"><br><br>
+    	<div class="button" id="uploaddisease">
+    		<img src="assests/uploadimage.png">
+    		<b class="uploadbutton">Upload image</b>
+    
+    	</div>
+    
+    </center>
+  </div>
+  <div class="details-holder" >
+    <center>
+      <h3 class="colorgreen">Diseas post</h3><br>
+      <label><h3>Date noticed in farm</h3></label><br>
+    <input type="date" name="" placeholder="Date noticed" class="myinput"><br><br>
+    <label><h3>Destraction to farm</h3></label><br>
+    <select class="myinputcmb">
+      <option>Not yet seen</option>
+      <option>Few crops (2.5M) square</option>
+      <option>1/4 of farm</option>
+      <option>Almost 1/2 of farm</option>
+      <option>1\2 of farm</option>
+      <option>Almost whole farm</option>
+      <option>The whole farm</option>
+   </select><br><br>
+   <label><h3>Spreading to next farms</h3></label><br>
+    <input type="radio" name="spread"  placeholder="07*********" value="Yes spreading">
+    <label>Yes spreading</label><br>
+    <input type="radio" name="spread"  placeholder="example@gmail.com" value="Not spreading"><label>Not spreading</label><br><br>
+    <div>
+      <h3>Crops affecting</h3>
+      <div class="inputdiv">
+       <input type="text" name="" placeholder="Add your crops" class="myinputtxtjoin">
+       <select class="myinputcmbjoin">
+      <option>Crop a</option>
+      <option>Crop b</option>
+      <option>Crop c</option>
+   </select>
+   </div><br>
+   <label><h3>Note/comment</h3></label><br>
+   
+    </div>
+     <textarea placeholder="please leave a note"></textarea><br><br>
+     <button class="submitpostbutton"><b>POST Disease</b></button>
+  </div>
+
+</div>
+</div>
+<!-- end of post -->
+
+
 
 <!-- end content -->
 
@@ -167,6 +260,8 @@
       }
     }
   </script>
+
+  <script type="text/javascript" src="js/post.js"></script>
 
 </body>
 </html>
