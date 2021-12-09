@@ -1,4 +1,5 @@
 
+
   const firebaseConfig = {
 
     apiKey: "AIzaSyCYlE5ZywCHCZEHwJY7xA_iIkpta0saNcU",
@@ -20,6 +21,6 @@
 
   // Initialize Firebase
 
-  const app = initializeApp(firebaseConfig);
-
-  const analytics = getAnalytics(app);
+  firebase.initializeApp(firebaseConfig);
+   const auth = firebase.auth();
+  
