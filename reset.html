@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<title>Farmers hub</title>
 	<link rel="stylesheet" href="styles/footer.css">
-	<link rel="stylesheet" href="styles/dashboard.css">
+	<link rel="stylesheet" href="styles/reset.css">
 	
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 
@@ -29,43 +29,25 @@
   </nav>
 
   <!-- content -->
- <br><br><br><br><br><br>
- 	<div class="scroll-table">
- 	<div class="table-holder">
- 		<div class="table-caption">
- 			<label id="usernamedisplay"></label>
- 		</div>
- 		<table>
- 			<thead>
- 				<tr>
-        <th>New later <span>(</span> <span>0</span> <span>)</span></th>
-          <th>Region <span>(</span> <span>0</span> <span>)</span></th>
-          <th>Diseases <span>(</span> <span>0</span> <span>)</span></th>
- 					<th>Paste <span>(</span> <span>0</span> <span>)</span></th>
- 					<th>Message <span>(</span> <span>0</span> <span>)</span></th>
- 				</tr>
- 			</thead>
- 			<tbody>
-    
- 			</tbody>
- 		</table>
-   
-
- 	</div>
- </div>
- <br>
- <div class="postholder">
-  <div class="imagepostholder">
-  	<center><img src="assests/background.jpg" width="30%"></center>
-  </div>
-  <div class="postdetails">
-  	details
-  </div>
-   <div class="postdescription">
-  	description
-  </div>
-
- </div>
+      <br><br><br><br><br>
+      <main>
+        <section class="container reset-container">
+          <fieldset>
+            <div>
+              <img src="assests/background.jpg" style=" width: 300px;
+    height: 150px;
+    margin: auto;
+    display: block;">
+            </div>
+            <div>
+              <label for="mail">Enter Email</label> <br>
+              <input type="email" id="mail" name="mail"/>
+            </div>
+            <button id="resetPassword">Confirm email</button>
+          </fieldset>
+      </section>
+     
+    </main> 
 <!-- end content -->
 
 <!-- footer -->
@@ -133,6 +115,6 @@
 <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-database.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-auth.js"></script>
   <script type="text/javascript" src="js/connection.js"></script>
-     <script type="text/javascript" src="js/dashboard.js"></script>
+   <script type="text/javascript" src="js/reset.js"></script> 
 </body>
 </html>

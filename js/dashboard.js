@@ -13,3 +13,13 @@ auth.onAuthStateChanged(function(user){
         window.location.href='auth.html';
       }
     })
+
+
+let signOutnow = document.getElementById('btnlogout');
+//// / sign out user
+
+signOutnow.addEventListener('click' , () =>{
+   localStorage.clear();
+        auth.signOut();
+      alert("signed out");
+})

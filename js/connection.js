@@ -1,26 +1,29 @@
 
 
-  const firebaseConfig = {
+  // Your web app's Firebase configuration
 
-    apiKey: "AIzaSyCYlE5ZywCHCZEHwJY7xA_iIkpta0saNcU",
+      var firebaseConfig = {
+   apiKey: "AIzaSyCYlE5ZywCHCZEHwJY7xA_iIkpta0saNcU",
 
-    authDomain: "farmershub-b0b87.firebaseapp.com",
+  authDomain: "farmershub-b0b87.firebaseapp.com",
 
-    projectId: "farmershub-b0b87",
+  databaseURL: "https://farmershub-b0b87-default-rtdb.firebaseio.com",
 
-    storageBucket: "farmershub-b0b87.appspot.com",
+  projectId: "farmershub-b0b87",
 
-    messagingSenderId: "862219659359",
+  storageBucket: "farmershub-b0b87.appspot.com",
 
-    appId: "1:862219659359:web:7d38c99cbb244ad95ed3ea",
+  messagingSenderId: "862219659359",
 
-    measurementId: "G-M7G1803YC9"
+  appId: "1:862219659359:web:7d38c99cbb244ad95ed3ea",
 
+  measurementId: "${config.measurementId}"
   };
 
 
   // Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 
-  firebase.initializeApp(firebaseConfig);
    const auth = firebase.auth();
-  
+
+
