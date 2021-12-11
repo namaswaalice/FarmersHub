@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Farmers hub</title>
+	<link rel="stylesheet" href="styles/footer.css">
+	<link rel="stylesheet" href="styles/reset.css">
+	
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+	<link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+<nav>
+    <div class="nav-content">
+      <div class="logo">
+        <a href="#">Farmers hub.</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="connect.html">Connect</a></li>
+        <li><a href="post.html">Post</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="#" id="btnlogout">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- content -->
+      <br><br><br><br><br>
+      <main>
+        <section class="container reset-container">
+          <fieldset>
+            <div>
+              <img src="assests/background.jpg" style=" width: 300px;
+    height: 150px;
+    margin: auto;
+    display: block;">
+            </div>
+            <div>
+              <label for="mail">Enter Email</label> <br>
+              <input type="email" id="mail" name="mail"/>
+            </div>
+            <button id="resetPassword">Confirm email</button>
+          </fieldset>
+      </section>
+     
+    </main> 
+<!-- end content -->
+
+<!-- footer -->
+<footer class="footer-distributed">
+
+			<div class="footer-left">
+          <img src="assests/background.jpg" height="70px">
+				<h3>About<span>Farmers hub</span></h3>
+
+				<p class="footer-links">
+					<a href="#">Home</a>
+					|
+					<a href="#">Blog</a>
+					|
+					<a href="#">About</a>
+					|
+					<a href="#">Contact</a>
+				</p>
+
+				<p class="footer-company-name">© 2021 Farmers hub . Ltd.</p>
+			</div>
+
+			<div class="footer-center">
+				<div>
+					<i class="fa fa-map-marker"></i>
+					  <p><span>5300 - Bungoma Kenya,
+						 #################</span>
+						###, #### ##### - 400710</p>
+				</div>
+
+				<div>
+					<i class="fa fa-phone"></i>
+					<p>+254-70027-3632</p>
+				</div>
+				<div>
+					<i class="fa fa-envelope"></i>
+					<p><a href="mailto:alicenamsawa@gmail.ccom.com">support@farmershub.com</a></p>
+				</div>
+			</div>
+			<div class="footer-right">
+				<p class="footer-company-about">
+					<span>About the hub</span>
+					To connetc farmers form all over kenay in the same platform to share ideas to better their farms.</p>
+				<div class="footer-icons">
+					<a href="#"><i class="fa fa-facebook "></i></a>
+					<a href="#"><i class="fa fa-twitter"></i></a>
+					<a href="#"><i class="fa fa-instagram"></i></a>
+					<a href="#"><i class="fa fa-linkedin"></i></a>
+				</div>
+			</div>
+		</footer>
+
+
+  <script>
+  let nav = document.querySelector("nav");
+    window.onscroll = function() {
+      if(document.documentElement.scrollTop > 20){
+        nav.classList.add("sticky");
+      }else {
+        nav.classList.remove("sticky");
+      }
+    }
+  </script>
+<script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-auth.js"></script>
+  <script type="text/javascript" src="js/connection.js"></script>
+   <script type="text/javascript" src="js/reset.js"></script> 
+</body>
+</html>

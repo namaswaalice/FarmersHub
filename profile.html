@@ -22,7 +22,7 @@
         <li><a href="dashboard.html">Dashboard</a></li>
         <li><a href="connect.html">Connect</a></li>
         <li><a href="post.html">Post</a></li>
-        <li><a href="#">Logout</a></li>
+        <li><a href="#" id="btnlogout">Logout</a></li>
       </ul>
     </div>
   </nav>
@@ -41,16 +41,20 @@
   <div class="details-holder">
     <center>
       <h3>Your details</h3>
-    <input type="text" name="" placeholder="First nama" class="myinput"><br><br>
-    <input type="text" name="" placeholder="Other nama" class="myinput"><br><br>
-    <input type="text" name="" placeholder="07*********" class="myinput"><br><br>
-    <input type="text" name="" placeholder="example@gmail.com" class="myinput"><br><br>
-    <select class="myinputcmb">
-      <option>Select region</option>
-      <option>Select region</option>
-      <option>Select region</option>
+    <input type="text" name="" placeholder="Full name" class="myinput" id="txtuserfullname"><br><br>
+    <input type="text" name="" placeholder="07*********" class="myinput" id="txtuserphone"><br><br>
+    <input type="text" name="" placeholder="example@gmail.com" class="myinput" id="usernamedisplay"><br><br>
+    <select class="myinputcmb" id="cmbuserregion">
+      <option>Central Kenya</option>
+      <option>Coastal Kenya</option>
+      <option>East Kenya</option>
+      <option>Nairobi</option>
+      <option>Northeast Kenya</option>
+      <option>Nyanza</option>
+      <option>Rift Valley</option>
+      <option>West Kenya</option>
    </select><br><br>
-     <select class="myinputcmb">
+     <select class="myinputcmb" id="cmbusercountry">
       <option>Select County</option>
       <option>Select region</option>
       <option>Select region</option>
@@ -59,14 +63,14 @@
     <div>
       <h3>Your farm details</h3>
       <div class="inputdiv">
-       <input type="text" name="" placeholder="Add your crops" class="myinputtxtjoin">
-       <select class="myinputcmbjoin">
+       <input type="text" name="" placeholder="Add your crops" class="myinputtxtjoin" id="addedusercrops">
+       <select class="myinputcmbjoin" id="cmbusercrops">
       <option>Crop a</option>
       <option>Crop b</option>
       <option>Crop c</option>
    </select>
    </div>
-  <button class="submitprofilebutton"><b>UPDATE PROFILE</b></button>
+  <button class="submitprofilebutton" id="btnupdateprofile"><b>UPDATE PROFILE</b></button>
     </div>
   </div>
 
@@ -137,6 +141,10 @@
       }
     }
   </script>
-
+ <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-auth.js"></script>
+  <script type="text/javascript" src="js/connection.js"></script>
+     <script type="text/javascript" src="js/profile.js"></script>
 </body>
 </html>

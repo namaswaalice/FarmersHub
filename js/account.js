@@ -22,7 +22,11 @@ btnregister.addEventListener('click', () =>{
 firebase.database().ref('famerusers/' + indexedemail).set({
 
       FullName: fullName,
-      Email: email
+      Email: email,
+      Phone: "",
+      Region: "",
+      County: "",
+      Crops: ""
 
     },  (error) => {
   if (error) {
