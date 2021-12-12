@@ -25,6 +25,7 @@ btnusercrops.addEventListener('change', () =>{
 
 btnupdateprofile = document.getElementById('btnupdateprofile');
 btnupdateprofile.addEventListener('click', () =>{
+	btnupdateprofile.innerHTML = "Updating ....";
 	 txtuserphone = document.getElementById('txtuserphone').value;
      cmbuserregion = document.getElementById('cmbuserregion');
      cmbusercountry = document.getElementById('cmbusercountry');
@@ -38,7 +39,13 @@ btnupdateprofile.addEventListener('click', () =>{
       Region: regionname,
       County: countname,
       Crops: cmbusercrops
-      })
+      }).then(() => {
+  // Data saved successfully!
+  btnupdateprofile.innerHTML = "Update successfully";
+})
+.catch((error) => {
+  btnupdateprofile.innerHTML = "Update failed Retry";
+});
 })
 
 
