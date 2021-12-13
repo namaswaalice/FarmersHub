@@ -75,7 +75,7 @@ function CentralCounties() {
         }
 function CoastalCounties() {
 
-    var counties = ["Mombasa","Kwale","Kilifi","Tana" ,"River","Lamu","Taita–Taveta"];
+    var counties = ["Mombasa","Kwale","Kilifi","Tana River","Lamu","Taita–Taveta"];
             for (var i = 0; i < counties.length; i++) {
                 var optn = counties[i];
                 var el = document.createElement("option");

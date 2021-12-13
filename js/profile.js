@@ -50,6 +50,24 @@ btnupdateprofile.addEventListener('click', () =>{
 
 
 
+/// display user details
+displayUserDetails();
+
+function displayUserDetails() {
+	// body...
+let fullname =	localStorage.getItem('FullName');
+ let phone =      localStorage.getItem('Phone' );
+ let  region =     localStorage.getItem('Region');
+ let  county =     localStorage.getItem('County');
+ let locationholder = document.getElementById('locationholder');
+ let txtuserphone = document.getElementById('txtuserphone');
+ let txtuserfullname = document.getElementById('txtuserfullname');
+  locationholder.innerHTML = region + "/" + county;
+txtuserphone.value = phone;
+txtuserfullname = fullname;
+
+}
+
 let signOutnow = document.getElementById('btnlogout');
 signOutnow.addEventListener('click' , () =>{
    localStorage.clear();
