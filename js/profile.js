@@ -25,6 +25,7 @@ btnusercrops.addEventListener('change', () =>{
 
 btnupdateprofile = document.getElementById('btnupdateprofile');
 btnupdateprofile.addEventListener('click', () =>{
+	btnupdateprofile.innerHTML = "Updating ....";
 	 txtuserphone = document.getElementById('txtuserphone').value;
      cmbuserregion = document.getElementById('cmbuserregion');
      cmbusercountry = document.getElementById('cmbusercountry');
@@ -38,10 +39,34 @@ btnupdateprofile.addEventListener('click', () =>{
       Region: regionname,
       County: countname,
       Crops: cmbusercrops
-      })
+      }).then(() => {
+  // Data saved successfully!
+  btnupdateprofile.innerHTML = "Update successfully";
+})
+.catch((error) => {
+  btnupdateprofile.innerHTML = "Update failed Retry";
+});
 })
 
 
+
+/// display user details
+displayUserDetails();
+
+function displayUserDetails() {
+	// body...
+let fullname =	localStorage.getItem('FullName');
+ let phone =      localStorage.getItem('Phone' );
+ let  region =     localStorage.getItem('Region');
+ let  county =     localStorage.getItem('County');
+ let locationholder = document.getElementById('locationholder');
+ let txtuserphone = document.getElementById('txtuserphone');
+ let txtuserfullname = document.getElementById('txtuserfullname');
+  locationholder.innerHTML = region + "/" + county;
+txtuserphone.value = phone;
+txtuserfullname = fullname;
+
+}
 
 let signOutnow = document.getElementById('btnlogout');
 signOutnow.addEventListener('click' , () =>{
