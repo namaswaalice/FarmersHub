@@ -64,7 +64,7 @@ let fullname =	localStorage.getItem('FullName');
  let txtuserfullname = document.getElementById('txtuserfullname');
   locationholder.innerHTML = region + "/" + county;
 txtuserphone.value = phone;
-txtuserfullname = fullname;
+txtuserfullname.value = fullname;
 
 }
 
