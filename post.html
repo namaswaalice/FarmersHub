@@ -105,9 +105,9 @@
     <center>
       <h3 class="colorgreen">Paste post</h3><br>
       <label><h3>Date noticed in farm</h3></label><br>
-    <input type="date" name="" placeholder="Date noticed" class="myinput"><br><br>
+    <input type="date" name="" placeholder="Date noticed" class="myinput" id="pastepostdate"><br><br>
     <label><h3>Destraction to farm</h3></label><br>
-    <select class="myinputcmb">
+    <select class="myinputcmb" id="cmbpastedestraction">
       <option>Not yet seen</option>
       <option>Few crops (2.5M) square</option>
       <option>1/4 of farm</option>
@@ -123,8 +123,8 @@
     <div>
       <h3>Crops affecting</h3>
       <div class="inputdiv">
-       <input type="text" name="" placeholder="Add your crops" class="myinputtxtjoin">
-       <select class="myinputcmbjoin">
+       <input type="text" name="" placeholder="Add your crops" class="myinputtxtjoin" id="cropsaffected">
+       <select class="myinputcmbjoin" id="cmbcropsdestracted">
       <option>Crop a</option>
       <option>Crop b</option>
       <option>Crop c</option>
@@ -133,8 +133,8 @@
    <label><h3>Note/comment</h3></label><br>
    
     </div>
-     <textarea placeholder="please leave a note"></textarea><br><br>
-     <button class="submitpostbutton"><b>POST Paste</b></button>
+     <textarea placeholder="please leave a note" id="pastenote"></textarea><br><br>
+     <button class="submitpostbutton" id="btnsubmitpost"><b>POST Paste</b></button>
   </div>
 
 </div>
@@ -260,7 +260,10 @@
       }
     }
   </script>
-
+ <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-auth.js"></script>
+  <script type="text/javascript" src="js/connection.js"></script>
   <script type="text/javascript" src="js/post.js"></script>
 
 </body>

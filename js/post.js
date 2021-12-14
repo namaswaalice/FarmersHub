@@ -70,3 +70,101 @@ if (formNumber == 2) {
 }
 
 }
+
+
+/// add post to 
+
+
+txtcropsaffected = document.getElementById('cropsaffected');
+cmbcropsdestracted = document.getElementById('cmbcropsdestracted');
+cmbcropsdestracted.addEventListener('change', () =>{
+	let newcrops = cmbcropsdestracted.options[cmbcropsdestracted.selectedIndex].value;
+	txtcropsaffected.value += newcrops + ",";
+})
+
+function addPastePost(argument) {
+	// body...
+	// validate input
+	let postdate = document.getElementById('pastepostdate').value;
+	let destraction = document.getElementById('cmbpastedestraction');
+	let newdestraction = destraction.options[destraction.selectedIndex].value;
+	let spreading = document.getElementsByName('spread');
+	let affectedcrops = document.getElementById('cropsaffected').value;
+	let note = document.getElementById('pastenote').value;
+	let spreadstatus;
+	// get radion value  
+            for(i = 0; i < spreading.length; i++) {
+                if(spreading[i].checked)
+                spreadstatus = spreading[i].value;
+            }
+    
+     // get timestamp
+      let timetimestamp = Date.now();
+     console.log(postdate + "/"+ newdestraction + "/"+  spreadstatus + "/"+  affectedcrops + "/"+ note)
+     console.log(timetimestamp);
+
+
+      // check null values
+var today = new Date();
+var datetoday = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+
+if(affectedcrops == "" || note == ""){
+   alert('fill all form details')
+   btnsubmitpost.innerHTML ="POST paste";
+}else{
+	//post to firebase
+	firebase.database().ref('pastepost/' + timetimestamp).set({
+Postdate: postdate,
+Newdestraction: newdestraction,
+Affectedcrops: affectedcrops,
+Note: note,
+Spreadstatus: spreadstatus
+
+    },  (error) => {
+  if (error) {
+    // The write failed...
+     alert('Registration Faled');
+     postdate.value = "";
+     destraction.selectedIndex = 0;
+     spreading.checked = false;
+     affectedcrops.value = ""; 
+     note.value = "";
+     btnsubmitpost.innerHTML ="POST Fail Post again";
+  }else{
+  	postdate.value = "";
+     destraction.selectedIndex = 0;
+     spreading.checked = false;
+     affectedcrops.value = ""; 
+     note.value = "";
+  	btnsubmitpost.innerHTML ="Submited successfull";
+  }
+})
+}
+
+}
+
+let btnsubmitpost = document.getElementById('btnsubmitpost');
+ btnsubmitpost.addEventListener('click' , () =>{
+ 	btnsubmitpost.innerHTML ="Submiting ....";
+ 	addPastePost();
+ })
+
+
+/// 
+
+	function validateid() {
+
+		// body...
+
+		var studentidnumber = document.getElementById("idno").value;
+		var chk = /^[-+]?[0-9]+$/;
+		if(chk.test(studentidnumber)){
+			document.getElementById("idfeedback").style.color = "green";
+			document.getElementById("idfeedback").innerHTML = "<strong>ID Accepted</strong>";
+			return true;
+		}else{
+			document.getElementById("idfeedback").style.color = "red";
+			document.getElementById("idfeedback").innerHTML = "<strong>invalid ID</strong>";
+			return false;
+		}
+	}
