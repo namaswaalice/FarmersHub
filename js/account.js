@@ -23,10 +23,10 @@ firebase.database().ref('famerusers/' + indexedemail).set({
 
       FullName: fullName,
       Email: email,
-      Phone: "",
-      Region: "",
-      County: "",
-      Crops: ""
+      Phone: " ",
+      Region: " ",
+      County: " ",
+      Crops: " "
 
     },  (error) => {
   if (error) {
