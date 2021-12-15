@@ -106,24 +106,35 @@
     <select class="myinputcmb" id="cmbpastedestraction">
       <option>Not yet seen</option>
       <option>Few crops (2.5M) square</option>
-      <option>1/4 of farm</option>
-      <option>Almost 1/2 of farm</option>
-      <option>1\2 of farm</option>
+      <option>1/4 of the farm</option>
+      <option>Almost 1/2 of the farm</option>
+      <option>1\2 of the farm</option>
       <option>Almost whole farm</option>
       <option>The whole farm</option>
    </select><br><br>
    <label><h3>Spreading to next farms</h3></label><br>
-    <input type="radio" name="spread"  placeholder="07*********" value="Yes spreading">
+    <input type="radio" name="spread"  placeholder="Yes spreading" value="Yes spreading">
     <label>Yes spreading</label><br>
-    <input type="radio" name="spread"  placeholder="example@gmail.com" value="Not spreading"><label>Not spreading</label><br><br>
+    <input type="radio" name="spread"  placeholder="Not Spreading" value="Not spreading"><label>Not spreading</label><br><br>
     <div>
       <h3>Crops affecting</h3>
       <div class="inputdiv">
-       <input type="text" name="" placeholder="Add your crops" class="myinputtxtjoin" id="cropsaffected">
+       <input type="text" name="" placeholder="Add your crops / type" class="myinputtxtjoin" id="cropsaffected">
        <select class="myinputcmbjoin" id="cmbcropsdestracted">
-      <option>Crop a</option>
-      <option>Crop b</option>
-      <option>Crop c</option>
+        <option> Add crop</option>
+      <option> sugarcane</option>
+      <option> maize </option>
+      <option> potato </option>
+      <option> banana </option>
+      <option> cassava </option>
+      <option> sweet potato </option>
+      <option> beans </option>
+      <option> tomato </option> 
+      <option> cabbage </option>
+      <option>  wheat</option>
+      <option> sorghum </option>
+      <option> watermelon </option>
+      <option> cowpea spinach </option>
    </select>
    </div><br>
    <label><h3>Note/comment</h3></label><br>
@@ -155,36 +166,47 @@
     <center>
       <h3 class="colorgreen">Diseas post</h3><br>
       <label><h3>Date noticed in farm</h3></label><br>
-    <input type="date" name="" placeholder="Date noticed" class="myinput"><br><br>
+    <input type="date" name="" placeholder="Date noticed" class="myinput" id="diseasepostdate"><br><br>
     <label><h3>Destraction to farm</h3></label><br>
-    <select class="myinputcmb">
+    <select class="myinputcmb" id="cmbdiseasedestraction">
       <option>Not yet seen</option>
       <option>Few crops (2.5M) square</option>
-      <option>1/4 of farm</option>
-      <option>Almost 1/2 of farm</option>
-      <option>1\2 of farm</option>
+      <option>1/4 of the farm</option>
+      <option>Almost 1/2 of the farm</option>
+      <option>1\2 of the farm</option>
       <option>Almost whole farm</option>
       <option>The whole farm</option>
    </select><br><br>
    <label><h3>Spreading to next farms</h3></label><br>
-    <input type="radio" name="spread"  placeholder="07*********" value="Yes spreading">
+    <input type="radio" name="diseasespread"  placeholder="Yes" value="Yes spreading">
     <label>Yes spreading</label><br>
-    <input type="radio" name="spread"  placeholder="example@gmail.com" value="Not spreading"><label>Not spreading</label><br><br>
+    <input type="radio" name="diseasespread"  placeholder="No" value="Not spreading"><label>Not spreading</label><br><br>
     <div>
       <h3>Crops affecting</h3>
       <div class="inputdiv">
-       <input type="text" name="" placeholder="Add your crops" class="myinputtxtjoin">
-       <select class="myinputcmbjoin">
-      <option>Crop a</option>
-      <option>Crop b</option>
-      <option>Crop c</option>
+       <input type="text" name="" placeholder="Add your crops / type" class="myinputtxtjoin" id="txtcropsaffecteddisease">
+       <select class="myinputcmbjoin" id="cmbcropsdestracteddisease">
+       <option> Add crop</option>
+      <option> sugarcane</option>
+      <option> maize </option>
+      <option> potato </option>
+      <option> banana </option>
+      <option> cassava </option>
+      <option> sweet potato </option>
+      <option> beans </option>
+      <option> tomato </option> 
+      <option> cabbage </option>
+      <option>  wheat</option>
+      <option> sorghum </option>
+      <option> watermelon </option>
+      <option> cowpea spinach </option>
    </select>
    </div><br>
    <label><h3>Note/comment</h3></label><br>
    
     </div>
-     <textarea placeholder="please leave a note"></textarea><br><br>
-     <button class="submitpostbutton"><b>POST Disease</b></button>
+     <textarea placeholder="please leave a note" id="diseasenote"></textarea><br><br>
+     <button class="submitpostbutton" id="btnsubmitpostdisease"><b>POST Disease</b></button>
   </div>
 
 </div>

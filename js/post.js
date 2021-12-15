@@ -101,12 +101,16 @@ txtcropsaffected = document.getElementById('cropsaffected');
 cmbcropsdestracted = document.getElementById('cmbcropsdestracted');
 cmbcropsdestracted.addEventListener('change', () =>{
 	let newcrops = cmbcropsdestracted.options[cmbcropsdestracted.selectedIndex].value;
-	txtcropsaffected.value += newcrops + ",";
+	txtcropsaffected.value += newcrops + " ";
 })
 
 function addPastePost(argument) {
 	// body...
 	// validate input
+	let postuserid =  localStorage.getItem("userID");
+	let postregion =  localStorage.getItem("Region");
+	let postcounty =  localStorage.getItem("County");
+	let posttitle = "PASTE ALERT";
 	let postdate = document.getElementById('pastepostdate').value;
 	let destraction = document.getElementById('cmbpastedestraction');
 	let newdestraction = destraction.options[destraction.selectedIndex].value;
@@ -129,19 +133,24 @@ function addPastePost(argument) {
       // check null values
 var today = new Date();
 var datetoday = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-
+var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 if(affectedcrops == "" || note == ""){
    alert('fill all form details')
    btnsubmitpost.innerHTML ="POST paste";
 }else{
 	//post to firebase
-	firebase.database().ref('pastepost/' + postid).set({
+	firebase.database().ref('pastepost/' + timetimestamp).set({
 Postdate: postdate,
+Posttime: time,
 Newdestraction: newdestraction,
 Affectedcrops: affectedcrops,
 Note: note,
 Spreadstatus: spreadstatus,
-Postkey: timetimestamp
+Postkey: timetimestamp,
+Postuser: postuserid,
+Regionaffected: postregion,
+Countyaffected: postcounty,
+Posttitle: posttitle
 
     },  (error) => {
   if (error) {
@@ -171,6 +180,90 @@ let btnsubmitpost = document.getElementById('btnsubmitpost');
  	btnsubmitpost.innerHTML ="Submiting ....";
  	addPastePost();
  })
+//// add desease to firebase
+
+
+
+
+/// add post to 
+
+
+txtcropsaffecteddisease = document.getElementById('txtcropsaffecteddisease');
+cmbcropsdestracteddisease = document.getElementById('cmbcropsdestracteddisease');
+cmbcropsdestracteddisease.addEventListener('change', () =>{
+	let newcrops = cmbcropsdestracteddisease.options[cmbcropsdestracteddisease.selectedIndex].value;
+	txtcropsaffecteddisease.value += newcrops + " ";
+})
+
+function addDiseasePost(argument) {
+	// body...
+	// validate input
+	let postuserid =  localStorage.getItem("userID");
+	let postregion =  localStorage.getItem("Region");
+	let postcounty =  localStorage.getItem("County");
+	let posttitle = "DISEASE ALERT";
+	let postdate = document.getElementById('diseasepostdate').value;
+	let destraction = document.getElementById('cmbdiseasedestraction');
+	let newdestraction = destraction.options[destraction.selectedIndex].value;
+	let spreading = document.getElementsByName('diseasespread');
+	let affectedcrops = document.getElementById('txtcropsaffecteddisease').value;
+	let note = document.getElementById('diseasenote').value;
+	let spreadstatus;
+	// get radion value  
+            for(i = 0; i < spreading.length; i++) {
+                if(spreading[i].checked)
+                spreadstatus = spreading[i].value;
+            }
+    
+     // get timestamp
+      let timetimestamp =  Date.now();
+     console.log(postdate + "/"+ newdestraction + "/"+  spreadstatus + "/"+  affectedcrops + "/"+ note)
+     console.log(timetimestamp);
+
+
+      // check null values
+var today = new Date();
+var datetoday = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+if(affectedcrops == "" || note == ""){
+   alert('fill all form details')
+   btnsubmitpostdisease.innerHTML ="POST Disease";
+}else{
+	//post to firebase
+	firebase.database().ref('pastepost/' + timetimestamp).set({
+Postdate: postdate,
+Posttime: time,
+Newdestraction: newdestraction,
+Affectedcrops: affectedcrops,
+Note: note,
+Spreadstatus: spreadstatus,
+Postkey: timetimestamp,
+Postuser: postuserid,
+Regionaffected: postregion,
+Countyaffected: postcounty,
+Posttitle: posttitle
+
+    },  (error) => {
+  if (error) {
+    // The write failed...
+  
+     btnsubmitpostdisease.innerHTML ="POST Fail Post again";
+  }else{
+  
+  	btnsubmitpostdisease.innerHTML ="Submited successfull";
+  }
+})
+}
+
+}
+
+let btnsubmitpostdisease = document.getElementById('btnsubmitpostdisease');
+ btnsubmitpostdisease.addEventListener('click' , () =>{
+ 	btnsubmitpostdisease.innerHTML ="Submiting ....";
+ 	addDiseasePost();
+ })
+
+
 
 
 /// get post from firebase
@@ -185,34 +278,20 @@ let viewpostcomment = document.getElementById('viewpostcomment');
 
 
 let newpostid =  localStorage.getItem("userID");
- getAllFirebasePost(newpostid) ;
-function getAllFirebasePost(postid) {
+ getAllFirebasePost() ;
+function getAllFirebasePost() {
 	// body...
 	
-	firebase.database().ref('pastepost/' ).on('value',function(snapshot){
-    try{
- 
-      Affectedcrops = snapshot.val().Affectedcrops;
-      Newdestraction = snapshot.val().Newdestraction;
-      Note = snapshot.val().Note;
-      Postdate = snapshot.val().Postdate;
-      Spreadstatus = snapshot.val().Spreadstatus;
+	firebase.database().ref('pastepost').once('value',function(snapshot){
+		snapshot.forEach( 
+			function(Childsnapshot) {
+   Region = Childsnapshot.val().Regionaffected;
+   County = Childsnapshot.val().Countyaffected;
    
 
-      viewpostdate.innerHTML = Postdate;
-      viewpostdestraction.innerHTML = Newdestraction;
-      viewpostspreading.innerHTML = Spreadstatus;
-      viewpostcrops.innerHTML = Affectedcrops;
-      viewpostcomment.innerHTML = Note;
- 
-  }catch(err){
-    //alert(typeof err);
-    console.log(err.message);
- 
-  }
-   if (snapshot.val() == null) {
-
-   }
+})
+   
+  
 
 })
 }

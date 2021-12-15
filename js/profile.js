@@ -19,7 +19,7 @@ addedusercrops = document.getElementById('addedusercrops');
 btnusercrops = document.getElementById('cmbusercrops');
 btnusercrops.addEventListener('change', () =>{
 	let newcrops = btnusercrops.options[btnusercrops.selectedIndex].value;
-	addedusercrops.value += newcrops + ",";
+	addedusercrops.value += newcrops + " ";
 })
 
 
@@ -38,7 +38,7 @@ btnupdateprofile.addEventListener('click', () =>{
     Phone: txtuserphone,
       Region: regionname,
       County: countname,
-      Crops: cmbusercrops
+      Crops: addedusercrops
       }).then(() => {
   // Data saved successfully!
   btnupdateprofile.innerHTML = "Update successfully";
